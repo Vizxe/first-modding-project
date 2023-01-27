@@ -1,5 +1,8 @@
 {
   "item.firstmod.raw_fuck": "Raw Fuck",
-  "item.firstmod.lukewarm_fuck": "Lukewarm Fuck"
+  "item.firstmod.lukewarm_fuck": "Lukewarm Fuck",
 
+  "block.firstmod.hard_fuck": "Hard Fuck",
+  "block.firstmod.hard_fuck_ore": "Hard Fuck Ore",
+  "block.firstmod.fuck_ore": "Fuck Ore"
 }

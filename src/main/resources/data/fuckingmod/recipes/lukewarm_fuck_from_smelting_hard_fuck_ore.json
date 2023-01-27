@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 1,
+  "group": "fuck",
+  "ingredient": {
+    "item": "fuckingmod:hard_fuck_ore"
+  },
+  "result": "fuckingmod:lukewarm_fuck"
+
+}

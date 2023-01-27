@@ -19,14 +19,14 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.parsa.firstmod.FirstMod"
+      "net.parsa.fuckingmod.FirstMod"
     ],
     "client": [
-      "net.parsa.firstmod.FirstModClient"
+      "net.parsa.fuckingmod.FirstModClient"
     ]
   },
   "mixins": [
-    "firstmod.mixins.json"
+    "fuckingmod.mixins.json"
   ],
 
   "depends": {

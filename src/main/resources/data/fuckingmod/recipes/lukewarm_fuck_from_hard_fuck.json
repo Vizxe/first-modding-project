@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fuckingmod:hard_fuck"
+    }
+  ],
+  "result": {
+    "item": "fuckingmod:lukewarm_fuck",
+    "count": 4
+  }
+}

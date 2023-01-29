@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "---",
+    "---"
+  ],
+  "key": {
+    "#": {
+      "item": "fuckingmod:raw_fuck"
+    },
+    "-": {
+      "item": "fuckingmod:lukewarm_fuck"
+    }
+  },
+  "result": {
+    "item": "fuckingmod:fuck_teller"
+  }
+}

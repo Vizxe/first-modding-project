@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "fuckingmod:block/slow_fuck"
+  }
+}

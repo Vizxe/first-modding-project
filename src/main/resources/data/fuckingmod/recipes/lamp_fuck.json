@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#-#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "fuckingmod:lukewarm_fuck"
+    },
+    "-": {
+      "item": "minecraft:redstone_lamp"
+    }
+  },
+  "result": {
+    "item": "fuckingmod:lamp_fuck"
+  }
+}

@@ -12,13 +12,15 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.parsa.fuckingmod.FirstMod;
+import net.parsa.fuckingmod.block.custom.LampFuck;
 import net.parsa.fuckingmod.block.custom.SlowFuck;
+import net.parsa.fuckingmod.block.custom.base.FuckBlockBase;
 import net.parsa.fuckingmod.item.ModItemGroup;
 
 public class ModBlocks {
 
     public static final Block HARD_FUCK = registerBlock("hard_fuck",
-            new Block(FabricBlockSettings.of(Material.METAL).slipperiness(0.25f).strength(3f).requiresTool()));
+            new FuckBlockBase(FabricBlockSettings.of(Material.METAL).slipperiness(0.25f).strength(3f).requiresTool(), "It's... condensed fuck, ??? OK?"));
 
     public static final Block FUCK_ORE = registerBlock("fuck_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.of(Material.METAL).strength(4f).requiresTool(), UniformIntProvider.create(3,10)));
@@ -29,7 +31,12 @@ public class ModBlocks {
     public static final Block SLOW_FUCK = registerBlock("slow_fuck",
             new SlowFuck(FabricBlockSettings.of(Material.METAL).slipperiness(1f).strength(4f).requiresTool()));
 
-    private static Block registerBlock(String name, Block block) {
+    public static final Block LAMP_FUCK = registerBlock("lamp_fuck",
+            new LampFuck(FabricBlockSettings.of(Material.METAL).slipperiness(1f).strength(4f).requiresTool()
+                    .luminance(state -> state.get(LampFuck.LIT) ? 15 : 3), "It's a fucking lamp lmao. Right click to toggle on/off."));
+
+
+    private static Block registerBlock( String name, Block block) {
         ItemGroupEvents.modifyEntriesEvent(ModItemGroup.FUCK).register(entries -> entries.add(block));
         Registry.register(Registries.ITEM, new Identifier(FirstMod.MOD_ID, name), new BlockItem(block, new Item.Settings()));
         return Registry.register(Registries.BLOCK, new Identifier(FirstMod.MOD_ID, name), block);

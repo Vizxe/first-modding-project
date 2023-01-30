@@ -10,13 +10,14 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import net.parsa.fuckingmod.item.custom.base.FuckItemBase;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class FuckTeller extends Item {
+public class FuckTeller extends FuckItemBase {
     public FuckTeller(Settings settings) {
-        super(settings);
+        super(settings, "Right click for weird ass insults I got off merriam-webster");
     }
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
@@ -30,15 +31,6 @@ public class FuckTeller extends Item {
     @Override
     public boolean hasGlint(ItemStack stack) {
         return true;
-    }
-
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (Screen.hasShiftDown())
-            tooltip.add(Text.literal("Right click for weird ass insults I got off merriam-webster").formatted(Formatting.YELLOW));
-        else tooltip.add(Text.literal("Shift for more info cunt").formatted(Formatting.YELLOW));
-
-        super.appendTooltip(stack, world, tooltip, context);
     }
 
     private void outputMessage(PlayerEntity user) {

@@ -15,18 +15,21 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.parsa.fuckingmod.block.custom.base.FuckBlockBase;
 
 import java.util.Timer;
 
-public class SlowFuck extends Block {
+public class SlowFuck extends FuckBlockBase {
     public SlowFuck(Settings settings) {
-        super(settings);
+        super(settings,"If you right click it or step on it, you're fucking slowed.");
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (hand == Hand.MAIN_HAND && world.isClient())
+        if (hand == Hand.MAIN_HAND && world.isClient()) {
             applyEffects(player);
+            player.sendMessage(Text.literal("You slow fuck!"));
+        }
         return super.onUse(state, world, pos, player, hand, hit);
     }
 
@@ -38,8 +41,7 @@ public class SlowFuck extends Block {
     }
 
     private void applyEffects(LivingEntity e) {
-        e.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60));
-        e.sendMessage(Text.literal("You slow fuck!"));
+        e.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60,2));
     }
 
 }

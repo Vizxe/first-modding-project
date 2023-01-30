@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=false": {"model": "fuckingmod:block/lamp_fuck_off" },
+    "lit=true": {"model": "fuckingmod:block/lamp_fuck_on" }
+  }
+}

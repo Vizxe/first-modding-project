@@ -6,14 +6,15 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.parsa.fuckingmod.FirstMod;
+import net.parsa.fuckingmod.item.custom.base.FuckItemBase;
 import net.parsa.fuckingmod.item.custom.fuck_teller.FuckTeller;
 
 public class ModItems {
 
     public static final Item RAW_FUCK = registerItem("raw_fuck",
-            new Item(new Item.Settings()));
+            new FuckItemBase(new Item.Settings(), "It's raw fuck. What else."));
     public static final Item LUKEWARM_FUCK = registerItem("lukewarm_fuck",
-            new Item(new Item.Settings()));
+            new FuckItemBase(new Item.Settings(), "Like raw fuck but it's lukewarm."));
     public static final Item FUCK_TELLER = registerItem("fuck_teller",
             new FuckTeller(new Item.Settings().maxCount(1)));
 

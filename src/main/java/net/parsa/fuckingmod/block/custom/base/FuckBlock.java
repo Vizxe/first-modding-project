@@ -11,11 +11,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class FuckBlockBase extends Block {
+public class FuckBlock extends Block {
 
     private final String onShiftDown;
 
-    public FuckBlockBase(Settings settings, String onShiftDown) {
+    public FuckBlock(Settings settings, String onShiftDown) {
         super(settings);
         this.onShiftDown = onShiftDown;
     }

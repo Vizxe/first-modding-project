@@ -10,8 +10,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.parsa.fuckingmod.block.custom.base.FuckBlockBase;
-public class LampFuck extends FuckBlockBase {
+import net.parsa.fuckingmod.block.custom.base.FuckBlock;
+public class LampFuck extends FuckBlock {
     public static final BooleanProperty LIT = BooleanProperty.of("lit");
 
     public LampFuck(Settings settings, String onShiftDown) {

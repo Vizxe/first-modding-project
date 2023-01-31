@@ -3,6 +3,7 @@ package net.parsa.fuckingmod.block;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
@@ -12,15 +13,16 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.parsa.fuckingmod.FirstMod;
+import net.parsa.fuckingmod.block.custom.FuckCrop;
 import net.parsa.fuckingmod.block.custom.LampFuck;
 import net.parsa.fuckingmod.block.custom.SlowFuck;
-import net.parsa.fuckingmod.block.custom.base.FuckBlockBase;
+import net.parsa.fuckingmod.block.custom.base.FuckBlock;
 import net.parsa.fuckingmod.item.ModItemGroup;
 
 public class ModBlocks {
 
     public static final Block HARD_FUCK = registerBlock("hard_fuck",
-            new FuckBlockBase(FabricBlockSettings.of(Material.METAL).slipperiness(0.25f).strength(3f).requiresTool(), "It's... condensed fuck, ??? OK?"));
+            new FuckBlock(FabricBlockSettings.of(Material.METAL).slipperiness(1.5f).strength(3f).requiresTool(), "It's... condensed fuck, ??? OK?"));
 
     public static final Block FUCK_ORE = registerBlock("fuck_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.of(Material.METAL).strength(4f).requiresTool(), UniformIntProvider.create(3,10)));
@@ -35,8 +37,15 @@ public class ModBlocks {
             new LampFuck(FabricBlockSettings.of(Material.METAL).slipperiness(1f).strength(4f).requiresTool()
                     .luminance(state -> state.get(LampFuck.LIT) ? 15 : 3), "It's a fucking lamp lmao. Right click to toggle on/off."));
 
+    public static final Block FUCK_CROP = registerBlockWithoutItem("fuck_crop",
+            new FuckCrop(FabricBlockSettings.copy(Blocks.WHEAT)));
 
-    private static Block registerBlock( String name, Block block) {
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
+        return Registry.register(Registries.BLOCK, new Identifier(FirstMod.MOD_ID, name), block);
+    }
+
+    private static Block registerBlock(String name, Block block) {
         ItemGroupEvents.modifyEntriesEvent(ModItemGroup.FUCK).register(entries -> entries.add(block));
         Registry.register(Registries.ITEM, new Identifier(FirstMod.MOD_ID, name), new BlockItem(block, new Item.Settings()));
         return Registry.register(Registries.BLOCK, new Identifier(FirstMod.MOD_ID, name), block);

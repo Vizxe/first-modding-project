@@ -1,32 +1,27 @@
 package net.parsa.fuckingmod.block.custom;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
-import net.parsa.fuckingmod.block.custom.base.FuckBlockBase;
+import net.parsa.fuckingmod.block.custom.base.FuckBlock;
 
-import java.util.Timer;
-
-public class SlowFuck extends FuckBlockBase {
+public class SlowFuck extends FuckBlock {
     public SlowFuck(Settings settings) {
         super(settings,"If you right click it or step on it, you're fucking slowed.");
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (hand == Hand.MAIN_HAND && world.isClient()) {
+        if (hand == Hand.MAIN_HAND && !world.isClient()) {
             applyEffects(player);
             player.sendMessage(Text.literal("You slow fuck!"));
         }
@@ -41,7 +36,7 @@ public class SlowFuck extends FuckBlockBase {
     }
 
     private void applyEffects(LivingEntity e) {
-        e.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60,2));
+        e.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60,2, false, false));
     }
 
 }

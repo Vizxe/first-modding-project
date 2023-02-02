@@ -8,8 +8,8 @@ import net.parsa.fuckingmod.FirstMod;
 
 public class ModPaintings {
 
-    public static final PaintingVariant DAWN_FUCK = registerPainting("dawn_fuck", new PaintingVariant(32,16));
-    public static final PaintingVariant HUH_FUCK = registerPainting("huh_fuck", new PaintingVariant(16,16));
+    public static final PaintingVariant DAWN_FUCK = registerPainting("dawnfuck", new PaintingVariant(32,16));
+    public static final PaintingVariant HUH_FUCK = registerPainting("huhfuck", new PaintingVariant(16,16));
 
     private static PaintingVariant registerPainting(String name, PaintingVariant paintingVariant) {
         return Registry.register(Registries.PAINTING_VARIANT, new Identifier(FirstMod.MOD_ID, name), paintingVariant);

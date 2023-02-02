@@ -15,14 +15,14 @@ public class FirstMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		ModPaintings.registerModPaintings();
+
 		ModItems.registerModItems();
 
 		ModBlocks.registerModBlocks();
 
 		ModVillagers.registerVillagers();
 		ModVillagers.registerTrades();
-
-		ModPaintings.registerModPaintings();
 
 	}
 }
